@@ -1,0 +1,34 @@
+{
+  "name": "unnamed-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:webpack": "webpack serve",
+    "start:hot": "node hot-dev-server.js",
+    "start": "concurrently npm:start:*",
+    "deploy": "npm run build && aws s3 cp dist/* s3://hot-page-frontend/ --acl public-read",
+    "build": "rm -rf dist && NODE_ENV=production webpack && rm dist/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twfarnam/unnamed-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twfarnam/unnamed-frontend/issues"
+  },
+  "homepage": "https://github.com/twfarnam/unnamed-frontend#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "concurrently": "^5.3.0",
+    "css-loader": "^5.0.1",
+    "mini-css-extract-plugin": "^1.3.3",
+    "postcss-loader": "^4.1.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
