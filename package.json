@@ -7,7 +7,7 @@
     "start:webpack": "webpack serve",
     "start:hot": "node hot-dev-server.js",
     "start": "concurrently npm:start:*",
-    "deploy": "npm run build && aws s3 cp dist/* s3://hot-page-frontend/ --acl public-read",
+    "deploy": "npm run build && aws s3 cp dist/* s3://hot-page/assets/ --acl public-read",
     "build": "rm -rf dist && NODE_ENV=production webpack && rm dist/*.js"
   },
   "repository": {

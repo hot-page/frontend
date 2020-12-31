@@ -1,10 +1,11 @@
-const makeUnnamedDevelopmentServer = require('../hot-dev-server')
+const makeUnnamedDevelopmentServer = require('../dev-server')
 
 makeUnnamedDevelopmentServer({
-  site: 'first',
+  site: 'hot.page',
   port: 8000,
   replaceAssets: {
-    'https://unpkg.com/skeleton-css@2.0.4/css/skeleton.css': 'http://localhost:8001/skeleton.js'
+    'https://hot-page.s3.amazonaws.com/assets/skeleton.css':
+      'http://localhost:8001/skeleton.js'
   }
 })
 
